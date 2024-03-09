@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Madimi+One&family=Oswald:wght@200..700&family=Pacifico&family=Protest+Riot&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+  --beauty-font:"Dancing Script",sans-serif;
+  --header-font:"Oswald",sans-serif;
+  --input-font:"Lobster Two",sans-serif;
+  --label-font:"Protest Riot",sans-serif;
+  --new-font:"Madimi One",sans-serif;
+  --beauty-font2:"Pacifico",sans-serif;
+  --text-font:"Roboto",sans-serif;
+  --light-weight-font:lighter;
+}
+body{
+  background:linear-gradient(to bottom right,#f6d5f7,#fbe9d7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Footer */
+footer{
+  width:700px;
+  position: absolute;
+  bottom:0;
+  left:25%;
+  text-align: center;
+  font-family: var(--input-font);
+  font-weight: var(--light-weight-font);
+}
+/*Navbar*/
+nav{
+  display: flex;
+  margin:0 auto;
+  width:80%;
+  border-bottom: 1px solid black;
+  justify-content: space-around;
+}
+nav header h1{
+  font-family: var(--header-font);
+  font-weight: var(--light-weight-font);
+}
+nav header h1 a{
+  color:black;
+}
+nav div p a{
+  position: relative;
+  top:13.5px;
+  font-size:18.5px;
+  color:grey;
+  font-family:var(--new-font);
+  text-decoration: none;
+}
+nav div p a::after,#options button::after{
+  content: '';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:1px;
+  background-color: black;
+  transform: scale(0);
+  transform-origin: left;
+  transition: .5s;
+}
+nav div p a:hover::after,#options button:hover::after{
+  transform: scale(1);
+  transform-origin: right;
+}
+/*tasks*/
+#container{
+  position: relative;
+  top:10px;
+  padding:5px;
+}
+#task{
+  width:50%;
+  margin:0 auto;
+  border:1px solid black;
+  padding:10px;
+  margin-bottom: 20px;
+  /*Glass morphism*/
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/*title,desc,deadline,options*/
+#task{
+  transition: .5s;
+}
+#task:hover{
+  border:1px solid black;
+}
+#task #title{
+  font-family: var(--input-font);
+  font-weight: var(--light-weight-font);
+}
+#task #desc,#task #deadline{
+  margin-left: 20px;
+  font-family: var(--beauty-font2);
+  font-weight: var(--light-weight-font);
+  color:grey;
+}
+#options{
+  position: relative;
+  left: 475px;
+  width:30%;
+  display: flex;
+  justify-content: space-around;
+}
+#options button,#done label{
+  padding:7.5px;
+  font-family: var(--beauty-font);
+  border:none;
+  background:transparent;
+  font-size:15px;
+  color:grey;
+  transition:color .5s ease-in-out;
+  position: relative;
+}
+#options button:hover{
+  color:black;
+  cursor: pointer;
+}
+#options button a{
+  color:grey;
+  text-decoration: none;
+}
+/*done*/
+#done{
+  position: relative;
+  top:27px;
+  left:20px;
+}
+#done input[type='radio']:checked{
+  accent-color: rgb(174, 172, 172);
+  background: transparent;
+}
+#done:checked #task:hover{
+  border:1px solid lightgreen;
+}
+#incomplete:checked #task:hover{
+  border:1px solid red;
+}
+/* Learn from yesterday, live for today, hope for tomorrow. */
+/*Create*/
+#createForm,#updateForm{
+  position: relative;
+  left:41%;
+  top:230px;
+  border-left: 1px solid black;
+  padding-left:20px;
+  width:450px;
+}
+#createForm input,#updateForm input{
+  margin-bottom: 20px;
+  margin-top:5px;
+  border:none;
+  width:50%;
+  padding:2px;
+  background:transparent;
+  border-bottom: 1px solid black;
+  font-family: var(--new-font);
+  color:black !important;
+}
+#createForm input:focus,#updateForm input:focus{
+  outline: none;
+}
+#createForm label,#updateForm label{
+  font-family:var(--beauty-font);
+}
+#createForm button,#updateForm button{
+  margin:0 auto;
+  width:100px;
+  font-family: var(--label-font);
+  padding:5px;
+  border-radius: 25px;
+  background:transparent;
+  position: relative;
+  left:70px;
+}
+#updateForm h1{
+  position: absolute;
+  bottom:225px;
+  left:70px;
+  font-size:22.5px;
+  font-family: var(--text-font);
+  font-weight: var(--light-weight-font);
+  text-decoration: underline;
+}
+
+#container{
+  overflow: scroll;
+  height: 70vh;
+}
